@@ -11,6 +11,10 @@ import {
 
   const FormOverView = props => (
     <ScrollView style={ styles.formWrapper }>
+            <Button
+              title ="My Contacts"
+              onPress = { ()=>{ props.navigation.navigate('ContactScreen', { name: 'Batman'} ) } }
+            />
             <Text style={ styles.followLabel }> Name </Text>
             <TextInput
                 placeholder = 'Name field is required'

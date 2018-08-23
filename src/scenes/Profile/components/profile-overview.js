@@ -9,7 +9,6 @@ import {
 
   const ProfileOverView = props => (
     <View style={styles.profileContainer}>
-        <Text style={styles.profileTittle}> View Profile </Text>
         <Image
         source = { { uri: props.profile.image } }
         style={styles.profileImage}
