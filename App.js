@@ -14,7 +14,19 @@ const AppNavigator = StackNavigator(
     }
   },
   {
-    initialRouteName: 'ProfileScreen'
+    initialRouteName: 'ContactScreen',
+    navigationOptions : {
+      title: 'View Profile',
+      headerStyle: {
+          backgroundColor: '#3949AB',
+          borderBottomColor: '#3949AB',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+          fontWeight: '500',
+          fontSize: 26
+      },
+    }
   }
 );
 
