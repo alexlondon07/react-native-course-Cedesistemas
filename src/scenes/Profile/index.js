@@ -8,6 +8,7 @@ import {
   import ProfileOverView from './components/profile-overview';
   import FollowOverView from './components/follow-overview';
   import FormOverView from './components/form-overview';
+  import Api from "../../utils/api";
 
 class Profile extends Component {
   constructor(props) {
@@ -19,19 +20,40 @@ class Profile extends Component {
 
   //Método de Cilo de Vida
   componentDidMount() {
-    const profile = {
-      name: "Alexander Londoño Espejo",
-      location: "Caucasia - Ant",
-      image:
-        "https://pbs.twimg.com/profile_images/939327802746208256/i2GEJvdF_400x400.jpg",
-      followers: 45678,
-      followings: 789008,
-      phone: "3338880",
-      twitter: "@alexlondon07"
-    };
+   //  const profile = {
+    //   name: "Alexander Londoño Espejo",
+    //   location: "Caucasia - Ant",
+    //   photo:
+    //   "https://pbs.twimg.com/profile_images/939327802746208256/i2GEJvdF_400x400.jpg",
+    //   followers: 45678,
+    //   followings: 789008,
+    //   phone: "3338880",
+    //   twitter: "@alexlondon07"
+    // };
+    // this.setState({
+    //   //profile
+    //   //profile: profile
+    // });
+
+    //Invoke service
+    /*Api.getProfile()
+    .then( data => {
+      this.setState({
+        profile: data[1]
+      });
+      console.log(data)
+    })
+    .catch( error => console.log(error) );*/
+
+    this.invokeGetProfileWait();
+    console.log('Profile.js');
+  }
+
+  async invokeGetProfileWait(){
+    const data = await Api.getProfileWait();
+    console.log(data);
     this.setState({
-      profile
-      //profile: profile
+      profile: data[1]
     });
   }
 

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { StackNavigator } from "react-navigation";
 import Profile from "./src/scenes/Profile";
 import Contacts from "./src/scenes/Contacts";
+import Diary from "./src/scenes/Diary";
 
 const AppNavigator = StackNavigator(
   {
@@ -11,10 +12,16 @@ const AppNavigator = StackNavigator(
     },
     ContactScreen: {
       screen: Contacts
-    }
+    },
+    DiaryScreen :{
+      screen: Diary,
+      navigationOptions: () => ({
+        title: 'Diary'
+      })
+    } 
   },
   {
-    initialRouteName: 'ContactScreen',
+    initialRouteName: 'ProfileScreen',
     navigationOptions : {
       title: 'View Profile',
       headerStyle: {

@@ -41,7 +41,6 @@ class Contacts extends Component{
         this.setState ({
             contactList: contacts
         });
-        
     }
 
     static navigationOptions = {
@@ -50,7 +49,7 @@ class Contacts extends Component{
             fontSize: 18
         },
     }
-    renderItem = ( { item }) => <ItemContact contact = { item } />
+    renderItem = ( { item }) => <ItemContact navigation = { this.props.navigation } contact = { item } />
 
     separatorComponent = () => <ItemSeparator />;
 

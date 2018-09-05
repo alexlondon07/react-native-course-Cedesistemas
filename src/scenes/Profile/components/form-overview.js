@@ -27,14 +27,14 @@ import {
             <TextInput
                 placeholder = 'Twitter name field is required'
                 style = { styles.formInput }
-                value = { props.profile.twitter }
+                value = { props.profile.username }
             />
 
-            <Text style={ styles.followLabel }> Phone </Text>
+            <Text style={ styles.followLabel }> Email </Text>
             <TextInput
-                placeholder = 'Phone field is required'
+                placeholder = 'Email field is required'
                 style = { styles.formInput }
-                value = { props.profile.phone }
+                value = { props.profile.email }
             />
 
             <Text  style={ styles.followLabel } >All Share Social Data </Text>

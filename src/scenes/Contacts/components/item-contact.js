@@ -3,24 +3,31 @@ import {
     Text,
     View,
     StyleSheet ,
-    Image
+    Image,
+    TouchableHighlight
 } from 'react-native';
 
 const ItemContact = (props) => (
-    <View style={ styles.container }>
-        <View>
-            <Image
-                style={ styles.image }
-                source ={{ uri: props.contact.photo }}
-            />
-        </View>
-        <View style={ styles.context }>
+    <TouchableHighlight
+        onPress = { ()=> props.navigation.navigate('ProfileScreen') }
+        underlayColor = "#ccc"
+    >
+        <View style={ styles.container }>
             <View>
-                <Text style={ styles.contactName }> { props.contact.name }</Text>
-                <Text>{ props.contact.phone }</Text>
+                <Image
+                    style={ styles.image }
+                    source ={{ uri: props.contact.photo }}
+                />
+            </View>
+            <View style={ styles.context }>
+                <View>
+                    <Text style={ styles.contactName }> { props.contact.name }</Text>
+                    <Text>{ props.contact.phone }</Text>
+                </View>
             </View>
         </View>
-    </View>
+    </TouchableHighlight>
+
 );
 
 

@@ -10,11 +10,11 @@ import {
   const ProfileOverView = props => (
     <View style={styles.profileContainer}>
         <Image
-        source = { { uri: props.profile.image } }
+        source = { { uri: props.profile.photo } }
         style={styles.profileImage}
         />
         <Text style={styles.profileName}> { props.profile.name } </Text>
-        <Text style={styles.profileLocation}> { props.profile.location } </Text>
+        <Text style={styles.username}> @{ props.profile.username } </Text>
     </View>
   );
 
@@ -40,7 +40,7 @@ import {
         borderRadius: 70,
         resizeMode: 'cover'
       },
-      profileLocation:{
+      username:{
         color: '#fff',
         padding: 10
       },
