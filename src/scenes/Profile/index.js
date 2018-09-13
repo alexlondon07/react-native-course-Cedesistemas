@@ -9,6 +9,8 @@ import {
   import FollowOverView from './components/follow-overview';
   import FormOverView from './components/form-overview';
   import Api from "../../utils/api";
+import HttpUser from "../../services/Users/http-users";
+
 
 class Profile extends Component {
   constructor(props) {
@@ -46,7 +48,20 @@ class Profile extends Component {
     .catch( error => console.log(error) );*/
 
     this.invokeGetProfileWait();
+    
     console.log('Profile.js');
+    this.getUsers();
+    this.getUserByToken();
+  }
+
+  async getUsers(){
+    const data = await HttpUser.getUsers();
+    console.log(data);
+  }
+
+  async getUserByToken(){
+    const data = await HttpUser.getUserByToken();
+    console.log(data);
   }
 
   async invokeGetProfileWait(){
