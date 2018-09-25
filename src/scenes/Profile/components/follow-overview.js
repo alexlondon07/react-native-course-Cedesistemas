@@ -3,18 +3,18 @@ import {
     Text, 
     View,
     StyleSheet,
-    AlertIOS
   } from 'react-native';
+  import i18n from './../../../i18n';
 
   const FollowOverView = props => (
     <View style={styles.followContainer}>
         <View style={ styles.followWrapper}>
         <Text style={ styles.followValue }> { props.followings }  </Text>
-        <Text style={ styles.followTittle }> Followers </Text>
+        <Text style={ styles.followTittle }> { i18n.t('FOLLOWERS') } </Text>
         </View>
         <View style={ styles.followWrapper}>
         <Text style={ styles.followValue }> { props.followers }  </Text>
-        <Text style={ styles.followTittle }> Followings </Text>
+        <Text style={ styles.followTittle }> { i18n.t('FOLLOWERS') }</Text>
         </View>
     </View>
   );

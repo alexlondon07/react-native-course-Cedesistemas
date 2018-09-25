@@ -1,5 +1,21 @@
 class HttpBase{
 
+    buildUrl(url, parameters) {
+        let qs = "";
+        for (const key in parameters) {
+            if (parameters.hasOwnProperty(key)) {
+                const value = parameters[key];
+                qs +=
+                    encodeURIComponent(key) + "=" + encodeURIComponent(value) + "&";
+            }
+        }
+        if (qs.length > 0) {
+            qs = qs.substring(0, qs.length - 1); //chop off last "&"
+            url = url + "?" + qs;
+        }
+        return url;
+    }
+
    async basePost(url, config){
         try {
             const options = {
@@ -22,6 +38,24 @@ class HttpBase{
                 headers: this.headersConfig(config.headers),
             }
             let query = await this.callHttp(url, options);
+            const data = await query.json();
+            return data;
+
+        } catch (error) {
+            throw new Error(error)   
+        }
+    }
+
+    async baseGet_2(url, config){
+        try {
+            const options = {
+                method: 'GET',
+                headers: this.headersConfig(config.headers),
+            }
+            const parameters = {
+                parameters: this.headersConfig(config.parameters),
+            }
+            let query = await this.callHttp(buildUrl(url, parameters), options);
             const data = await query.json();
             return data;
 

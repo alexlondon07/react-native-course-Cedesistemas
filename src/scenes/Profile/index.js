@@ -22,7 +22,7 @@ class Profile extends Component {
 
   //Método de Cilo de Vida
   componentDidMount() {
-   //  const profile = {
+    //  const profile = {
     //   name: "Alexander Londoño Espejo",
     //   location: "Caucasia - Ant",
     //   photo:
