@@ -7,6 +7,8 @@ import Diary from "./src/scenes/Diary";
 
 import RNLanguage from 'react-native-languages';
 import i18n from "./src/i18n";
+import VideoInfo from "./src/scenes/Video";
+import Localization from "./src/scenes/Localization";
 
 const AppNavigator = StackNavigator(
   {
@@ -21,10 +23,22 @@ const AppNavigator = StackNavigator(
       navigationOptions: () => ({
         title: 'Diary'
       })
-    } 
+    },
+    VideoScreen :{
+      screen: VideoInfo,
+      navigationOptions: () => ({
+        title: 'Video'
+      })
+    },
+    LocalizationScreen :{
+      screen: Localization,
+      navigationOptions: () => ({
+        title: 'Localization'
+      })
+    }    
   },
   {
-    initialRouteName: 'ProfileScreen',
+    initialRouteName: 'LocalizationScreen',
     navigationOptions : {
       title: 'View Profile',
       headerStyle: {
